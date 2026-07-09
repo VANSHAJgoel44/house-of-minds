@@ -350,31 +350,24 @@
    ========================================================================== */
 @media (max-width: 1024px) {
   .values-inner {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 16px;
-    padding: 10px var(--gutter) 20px;
-    width: 100vw;
-    margin-inline: calc(-1 * var(--gutter));
-    scrollbar-width: none;
-  }
-  .values-inner::-webkit-scrollbar { display: none; }
-  .value-item {
-    flex: 0 0 250px;
-    scroll-snap-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0 var(--gutter) 8px;
+    width: 100%;
+    margin-inline: 0;
+    overflow: visible;
   }
 
   .stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 12px;
+    width: 100%;
+    margin-inline: 0;
   }
   .stat {
     padding: 16px 10px;
-  }
-  .services-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -386,6 +379,12 @@
     height: auto;
     max-height: none;
     padding-block: 72px;
+  }
+  .story-img-wrap {
+    order: 2;
+  }
+  .story-content {
+    order: 1;
   }
   .story-content {
     display: flex;
@@ -411,6 +410,7 @@
     height: 320px;
     margin-top: 24px;
     border-radius: 28px;
+    padding-inline: 18px;
   }
   .approach-content {
     align-items: center;
@@ -424,42 +424,71 @@
   .offer-intro {
     height: auto;
     max-height: none;
+    padding-block: 72px;
   }
   .offer-left-panel {
     border-right: none;
     border-bottom: 1px solid rgba(30,39,25,0.08);
     padding: 22px var(--gutter) 18px;
   }
-  .services-list {
-    grid-template-columns: 1fr;
-  }
-  .services-list-item {
-    padding: 9px 10px;
-  }
-  .services-list-item .s-text h3 {
-    font-size: 0.82rem;
-  }
-  .services-list-item .s-text p {
-    font-size: 0.72rem;
+  .services-interactive {
+    display: none;
   }
   .services-visual {
     display: none;
   }
+  .services-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    padding: 18px var(--gutter) 22px;
+    width: 100%;
+    height: auto;
+    gap: 14px;
+  }
+  .services-carousel-head {
+    display: none;
+  }
+  .offer-head {
+    margin-bottom: 14px;
+    text-align: center;
+  }
+  .offer-head h2 {
+    font-size: clamp(1.4rem, 5vw, 1.8rem);
+  }
+  .offer-head p {
+    margin-inline: auto;
+    max-width: 38rem;
+  }
+  .services-carousel-head {
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .services-carousel-head h2 {
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+    color: var(--deep-forest);
+    line-height: 1.2;
+  }
+  .services-carousel .carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: max-content;
+    animation: servicesCarouselScroll 70s linear infinite;
+  }
+  .carousel-card {
+    width: clamp(170px, 70vw, 240px);
+    height: clamp(220px, 58vw, 300px);
+  }
 
   .stats {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 14px;
-    padding: 10px var(--gutter) 20px;
-    width: 100vw;
-    margin-inline: calc(-1 * var(--gutter));
-    scrollbar-width: none;
-  }
-  .stats::-webkit-scrollbar { display: none; }
-  .stat {
-    flex: 0 0 160px;
-    scroll-snap-align: center;
+    padding: 10px 0 0;
+    width: 100%;
+    margin-inline: 0;
   }
 
   .cta-band {
@@ -477,7 +506,7 @@
     height: auto;
     max-height: none;
     min-height: auto;
-    padding-block: 72px;
+    padding-block: 64px;
   }
 
   .hero {
@@ -495,45 +524,13 @@
     border-radius: 28px;
   }
 
-  /* Static grids instead of horizontal scroll on mobile */
-  .values-inner {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: visible;
-    overflow-y: auto;
-    scroll-snap-type: none;
-    gap: 10px;
-    padding: 6px var(--gutter) 10px;
+  .story-img-wrap {
     width: 100%;
-    margin-inline: 0;
-    max-height: none;
-  }
-  .value-item {
-    flex: none;
-    scroll-snap-align: none;
-    padding: 12px 10px;
-  }
-  .value-item h3 { font-size: 0.85rem; }
-  .value-item p { font-size: 0.72rem; }
-
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: visible;
-    scroll-snap-type: none;
-    gap: 10px;
-    padding: 6px var(--gutter) 10px;
-    width: 100%;
-    margin-inline: 0;
-  }
-  .stat {
-    flex: none;
-    scroll-snap-align: none;
-    padding: 12px 8px;
   }
 
   .approach-img {
     height: 240px;
+    padding-inline: 16px;
   }
 
   .cta-band {

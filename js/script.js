@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('open');
       menuToggle.classList.toggle('active');
+      document.body.classList.toggle('menu-open', menuToggle.classList.contains('active'));
 
       if (menuToggle.classList.contains('active')) {
         bars[0].style.transform = 'translateY(8px) rotate(45deg)';
@@ -29,9 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
         menuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
         bars.forEach((bar) => (bar.style.transform = 'none'));
         bars[1].style.opacity = '1';
       });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        navMenu.classList.remove('open');
+        menuToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        bars.forEach((bar) => (bar.style.transform = 'none'));
+        bars[1].style.opacity = '1';
+      }
     });
   }
 

@@ -377,4 +377,54 @@ input, textarea { font-family: inherit; }
     padding-bottom: clamp(56px, 9vw, 100px);
     min-height: 0;
   }
+
+  .hero-copy,
+  .form-main,
+  .contact-side-card,
+  .locations-head,
+  .location-card,
+  .faq-copy-intro,
+  .faq-question,
+  .faq-answer-content {
+    text-align: center;
+  }
+
+  .hero-copy,
+  .form-main,
+  .contact-side-card,
+  .faq-copy-intro {
+    margin-inline: auto;
+  }
+
+  .hero-info-row {
+    justify-content: center;
+  }
+
+  .hero-info-item {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-info-item > div,
+  .side-item > div,
+  .location-card {
+    text-align: center;
+  }
+
+  .contact-side-card .side-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-social {
+    justify-content: center;
+  }
+
+  .form-main .btn {
+    align-self: center;
+  }
+
+  .form-desc {
+    margin-inline: auto;
+  }
 }
