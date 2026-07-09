@@ -121,19 +121,19 @@
   grid-template-columns: 1fr 1.1fr;
   gap: 0;
   overflow: hidden;
-  padding: 0;
+  padding: clamp(67px, 9vh, 120px) 0 0;
 }
 
 /* Left panel: header + scrollable service list */
 .offer-left-panel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: clamp(24px, 5vh, 60px) clamp(24px, var(--gutter), 60px) clamp(24px, 5vh, 60px) var(--gutter);
+  justify-content: flex-start;
+  padding: 0 clamp(24px, var(--gutter), 60px) clamp(20px, 4vh, 34px) var(--gutter);
   border-right: 1px solid rgba(30,39,25,0.08);
   overflow: hidden;
 }
-.offer-head { margin-bottom: clamp(16px, 2.5vh, 32px); }
+.offer-head { margin-bottom: clamp(12px, 2vh, 18px); }
 .offer-head h2 { font-size: clamp(1.5rem, 2.8vw, 2.2rem); color: var(--deep-forest); }
 .offer-head p { margin-top: 6px; color: var(--muted-grey); line-height: 1.5; font-size: clamp(0.82rem, 0.95vw, 0.95rem); }
 
@@ -145,30 +145,27 @@
   min-height: 0;
 }
 .services-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
   flex: 1;
-  overflow-y: auto;
-  padding-right: 4px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--soft-gold) transparent;
+  overflow: visible;
+  align-content: start;
 }
-.services-list::-webkit-scrollbar { width: 4px; }
-.services-list::-webkit-scrollbar-track { background: transparent; }
-.services-list::-webkit-scrollbar-thumb { background: var(--soft-gold); border-radius: 2px; }
 
 .services-list-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: clamp(8px, 1.2vh, 14px) 12px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
   border-bottom: 1px solid rgba(30,39,25,0.06);
   border-radius: 6px;
   cursor: pointer;
   transition: var(--transition-smooth);
   flex-shrink: 0;
+  min-width: 0;
 }
-.services-list-item:last-child { border-bottom: none; }
+.services-list-item:last-child { border-bottom: 1px solid rgba(30,39,25,0.06); }
 .services-list-item .num {
   font-family: var(--font-heading);
   font-size: clamp(0.8rem, 1vw, 0.95rem);
@@ -178,32 +175,29 @@
 }
 .services-list-item .s-text { flex: 1; min-width: 0; }
 .services-list-item .s-text h3 {
-  font-size: clamp(0.82rem, 1vw, 0.95rem);
+  font-size: clamp(0.76rem, 0.9vw, 0.9rem);
   margin: 0;
   transition: color 0.3s ease;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.22;
 }
 .services-list-item .s-text p {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   color: var(--muted-grey);
-  line-height: 1.4;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
+  line-height: 1.35;
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
   margin: 0;
-  transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.3s ease;
+  margin-top: 2px;
+  transition: color 0.3s ease;
 }
 .services-list-item:hover,
 .services-list-item.active { background: var(--soft-beige); }
 .services-list-item.active .s-text h3 { color: var(--soft-gold); }
 .services-list-item.active .s-text h3 { white-space: normal; }
-.services-list-item.active .s-text p {
-  max-height: 50px;
-  opacity: 1;
-  margin-top: 3px;
-}
+.services-list-item.active .s-text p { margin-top: 2px; }
 
 /* Right panel: sticky photo */
 .services-visual {
@@ -286,7 +280,7 @@
 .impact-label { display: block; font-size: clamp(0.7rem, 0.8vw, 0.78rem); letter-spacing: 0.22em; text-transform: uppercase; color: var(--soft-gold); font-weight: 600; margin-bottom: 8px; }
 .impact-header h2 { color: var(--warm-ivory); font-size: clamp(1.6rem, 3vw, 2.3rem); margin-bottom: 10px; }
 .impact-header p { color: var(--muted-sage); line-height: 1.5; font-size: clamp(0.85rem, 0.95vw, 0.98rem); }
-.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 1.5vw, 24px); width: 100%; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(10px, 1.5vw, 24px); width: 100%; margin-bottom: 1%; }
 .stat { text-align: center; padding: clamp(12px, 2vh, 26px) clamp(10px, 1.2vw, 16px); border: 1px solid rgba(244,232,220,0.12); border-radius: 16px; }
 .stat-icon { width: clamp(24px, 3.5vh, 34px); height: clamp(24px, 3.5vh, 34px); margin: 0 auto 10px; color: var(--soft-gold); }
 .stat-icon svg { width: 100%; height: 100%; }
@@ -296,43 +290,55 @@
 
 /* CTA band — lives as a banner inside the Impact section */
 .cta-band {
+  position: relative;
   max-width: var(--container-max);
-  margin: clamp(16px, 3vh, 36px) auto 0;
+  margin: 0 auto;
   width: 100%;
-  padding: clamp(16px, 2.5vh, 24px) clamp(24px, 3vw, 48px) clamp(16px, 2.5vh, 24px) clamp(16px, 2.5vh, 24px);
-  background: var(--dark-olive);
-  border-radius: 20px;
+  min-height: clamp(180px, 18vw, 240px);
+  padding: 0;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  gap: clamp(16px, 2.5vw, 32px);
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   overflow: hidden;
+  border-radius: 20px;
   border: 1px solid rgba(197,167,106,0.25);
+  background: var(--deep-forest);
 }
 .cta-band-media {
-  flex: 0 0 clamp(90px, 12vw, 150px);
-  height: clamp(80px, 9vh, 120px);
-  border-radius: 14px;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
   overflow: hidden;
+  z-index: 0;
 }
 .cta-band-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cta-band-text {
-  flex: 1;
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 4px;
 }
-.cta-band h2 { font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--warm-ivory); line-height: 1.25; text-align: left; }
-.cta-band p { color: var(--muted-sage); font-size: clamp(0.82rem, 0.95vw, 0.95rem); margin: 0; text-align: left; }
+.cta-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,20,13,0.32) 0%, rgba(15,20,13,0.62) 100%);
+  z-index: 0;
+}
+.cta-band h2 { font-size: clamp(1.2rem, 2.2vw, 1.7rem); color: var(--warm-ivory); line-height: 1.25; text-align: center; }
+.cta-band p { color: var(--sand); font-size: clamp(0.82rem, 0.95vw, 0.95rem); margin: 0; text-align: center; max-width: 520px; }
 .cta-band .btn {
-  margin-top: 8px;
-  align-self: flex-start;
+  margin-top: 6px;
+  align-self: center;
   background: var(--soft-gold);
   color: var(--deep-forest);
-  padding: 12px 30px;
+  padding: 11px 26px;
   border-radius: 10px;
   font-weight: 600;
   font-size: 0.88rem;
@@ -366,6 +372,9 @@
   }
   .stat {
     padding: 16px 10px;
+  }
+  .services-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -413,40 +422,28 @@
   }
 
   .offer-intro {
-    grid-template-columns: 1fr; /* Single column for mobile */
-    grid-template-rows: 1fr auto;
     height: auto;
     max-height: none;
-    padding-block: 72px;
   }
-  .offer-left-panel,
-  .services-visual { display: none; }
-  .services-carousel {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    padding: clamp(16px, 4vh, 28px) var(--gutter);
-    width: 100%;
-    height: auto;
-    gap: clamp(12px, 2.5vh, 22px);
+  .offer-left-panel {
+    border-right: none;
+    border-bottom: 1px solid rgba(30,39,25,0.08);
+    padding: 22px var(--gutter) 18px;
   }
-  .services-carousel-head {
-    text-align: center;
-    flex-shrink: 0;
+  .services-list {
+    grid-template-columns: 1fr;
   }
-  .services-carousel-head h2 {
-    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
-    color: var(--deep-forest);
-    line-height: 1.2;
+  .services-list-item {
+    padding: 9px 10px;
   }
-  .services-carousel .carousel-track {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    width: max-content;
-    /* Slower pass so cards are easier to read on mobile */
-    animation: servicesCarouselScroll 70s linear infinite;
+  .services-list-item .s-text h3 {
+    font-size: 0.82rem;
+  }
+  .services-list-item .s-text p {
+    font-size: 0.72rem;
+  }
+  .services-visual {
+    display: none;
   }
 
   .stats {
@@ -466,26 +463,7 @@
   }
 
   .cta-band {
-    flex-direction: column;
-    text-align: center;
-    padding: 20px;
-  }
-  .cta-band-media {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: 220px;
-    height: 120px;
-  }
-  .cta-band-text {
-    align-items: center;
-  }
-  .cta-band-text h2,
-  .cta-band-text p {
-    text-align: center;
-  }
-  .cta-band .btn {
-    align-self: center;
-    width: 100%;
+    min-height: 210px;
   }
 }
 
@@ -556,5 +534,9 @@
 
   .approach-img {
     height: 240px;
+  }
+
+  .cta-band {
+    min-height: 180px;
   }
 }

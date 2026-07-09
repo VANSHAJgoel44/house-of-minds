@@ -37,13 +37,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Sticky Header Scroll Effect
   const header = document.querySelector('.main-header');
-  const handleScroll = () => {
+  let navFrame = null;
+  const updateHeaderTheme = () => {
+    navFrame = null;
     if (!header) return;
+
+    const headerRect = header.getBoundingClientRect();
+    const probeX = Math.min(window.innerWidth - 4, Math.max(4, window.innerWidth / 2));
+    const probeY = Math.min(window.innerHeight - 4, Math.max(4, headerRect.height / 2));
+    const probe = document.elementFromPoint(probeX, probeY);
+    const section = probe?.closest?.('[data-nav]');
+    const isDarkSection = section?.getAttribute('data-nav') === 'dark';
+
     header.classList.toggle('scrolled', window.scrollY > 50);
+    header.classList.toggle('over-dark-section', Boolean(isDarkSection));
   };
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  window.addEventListener('resize', handleScroll);
-  handleScroll();
+  const scheduleHeaderThemeUpdate = () => {
+    if (navFrame !== null) return;
+    navFrame = window.requestAnimationFrame(updateHeaderTheme);
+  };
+  window.addEventListener('scroll', scheduleHeaderThemeUpdate, { passive: true });
+  window.addEventListener('resize', scheduleHeaderThemeUpdate);
+  scheduleHeaderThemeUpdate();
 
   // 2b. Active nav state based on the current page URL
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -56,9 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  document.querySelectorAll('.nav-menu a, .footer-links a').forEach((link) => {
+  document.querySelectorAll('.nav-menu a').forEach((link) => {
     const href = link.getAttribute('href');
     if (!href) return;
+    if (href.includes('#')) return;
     const targetPath = normalizeHref(href);
     if (targetPath === currentPath) {
       link.classList.add('active');

@@ -115,7 +115,12 @@ svg { display: block; }
 .main-header.scrolled {
   padding: 16px 0;
   background-color: var(--deep-forest);
-  box-shadow: 0 6px 24px rgba(20,28,22,0.18);
+  
+}
+.main-header.over-dark-section,
+.main-header.over-dark-section.scrolled {
+  background-color: transparent;
+  box-shadow: none;
 }
 .header-logo,
 .nav-menu a,

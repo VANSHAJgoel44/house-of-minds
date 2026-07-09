@@ -253,7 +253,7 @@ input, textarea { font-family: inherit; }
 .form-status.success { color: var(--soft-gold); }
 
 .contact-side-card {
-  background: rgba(30,39,25,0.55);
+  background: rgba(30,39,25,0.85);
   border: 1px solid rgba(244,232,220,0.15);
   backdrop-filter: blur(10px);
   border-radius: 18px;
@@ -310,34 +310,6 @@ input, textarea { font-family: inherit; }
 
 @media (max-width: 860px) {
   .locations-grid { grid-template-columns: 1fr; }
-}
-
-/* ==========================================================================
-   CTA Section
-   ========================================================================== */
-.cta-band {
-  background: var(--deep-forest);
-  display: flex;
-  align-items: center;
-  padding: 90px;
-  border-bottom: solid var(--sand) 0.1px;
-}
-.cta-band-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  /* gap: 24px;
-  flex-wrap: wrap; */
-}
-.cta-band-left { display: flex; align-items: center; gap: 22px; }
-.cta-band .icon-circle { width: 60px; height: 60px; background: rgba(197,167,106,0.16); border: 1px solid rgba(197,167,106,0.4); color: var(--soft-gold); }
-.cta-band .icon-circle svg { width: 24px; height: 24px; }
-.cta-band h3 { color: var(--warm-ivory); font-size: 1.5rem; margin-bottom: 8px; }
-.cta-band p { margin-bottom:20px; color: var(--muted-sage); font-size: 0.95rem; max-width: 480px; }
-
-@media (max-width: 700px) {
-  .cta-band-inner { justify-content: center; text-align: center; flex-direction: column; }
-  .cta-band-left { flex-direction: column; text-align: center; }
 }
 
 /* ==========================================================================
@@ -400,7 +372,6 @@ input, textarea { font-family: inherit; }
   .contact-hero,
   .contact-form-section,
   .locations-section,
-  .cta-band,
   .faq-section {
     padding-top: clamp(110px, 16vw, 140px);
     padding-bottom: clamp(56px, 9vw, 100px);
