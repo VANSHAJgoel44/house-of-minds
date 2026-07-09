@@ -45,6 +45,28 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', handleScroll);
   handleScroll();
 
+  // 2b. Active nav state based on the current page URL
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const normalizeHref = (href) => {
+    try {
+      const url = new URL(href, window.location.href);
+      return url.pathname.split('/').pop() || 'index.html';
+    } catch {
+      return href;
+    }
+  };
+
+  document.querySelectorAll('.nav-menu a, .footer-links a').forEach((link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    const targetPath = normalizeHref(href);
+    if (targetPath === currentPath) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+
   // 3. GSAP stacked section overlay
   // The browser still owns scrolling; ScrollTrigger only pins the panel rail
   // while each section slides upward exactly one viewport height.

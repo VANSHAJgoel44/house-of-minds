@@ -1,0 +1,433 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | The House of Minds</title>
+    <meta
+      name="description"
+      content="Reach out to The House of Minds â€” book a session, ask a question, or find our Gurugram, Delhi and online counseling centers."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+
+  <body>
+    <!-- Navigation Header -->
+    <header class="main-header">
+      <div class="header-container">
+        <a href="./index.html" class="logo-link">
+          <img src="assets/home/logo-navbar.png" alt="The House of Minds Logo" class="header-logo" />
+        </a>
+
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" id="menuToggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav class="nav-menu" id="navMenu">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./index.html#resources">Resources</a></li>
+            <li><a href="./index.html#faq">FAQ</a></li>
+            <li><a href="./contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-cta">
+          <a href="#contact-form" class="btn btn-nav-cta">Book a Session</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="stack-stack">
+      <!-- Hero -->
+      <section class="contact-hero stack-section">
+        <div class="section-bg"></div>
+        <div class="section-overlay"></div>
+        <div class="section-inner container">
+          <div class="hero-copy animate-on-scroll">
+            <p class="eyebrow">
+              <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 5H1M1 5l5-4M1 5l5 4"/></svg>
+              Contact Us
+            </p>
+            <h1 class="hero-heading">We're Here for <span class="accent">You</span></h1>
+            <p class="hero-desc">
+              Have a question, need support, or ready to start your wellness journey? Reach out to us. We're here to listen and help.
+            </p>
+
+            <div class="hero-info-row">
+              <div class="hero-info-item">
+                <div class="icon-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.32 1.75.54 2.65.66A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <h4>Call Us</h4>
+                  <p>+91 98765 43210</p>
+                </div>
+              </div>
+              <div class="hero-info-item">
+                <div class="icon-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                </div>
+                <div>
+                  <h4>Email Us</h4>
+                  <p>support@thehouseofminds.in</p>
+                </div>
+              </div>
+              <div class="hero-info-item">
+                <div class="icon-circle">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                </div>
+                <div>
+                  <h4>Working Hours</h4>
+                  <p>Monday â€“ Saturday<br />9:00 AM â€“ 7:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form / Get In Touch -->
+      <section class="contact-form-section stack-section" id="contact-form">
+        <div class="section-bg"></div>
+        <div class="section-overlay"></div>
+        <div class="section-inner container form-grid">
+          <div class="form-main animate-on-scroll">
+            <p class="eyebrow">
+              <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 5H1M1 5l5-4M1 5l5 4"/></svg>
+              Get In Touch
+            </p>
+            <h2 class="form-title">Send Us a Message</h2>
+            <p class="form-desc">Share your concerns, questions, or requirements with us. Our team will review your message and respond as soon as possible.</p>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <input type="text" name="name" placeholder="Full Name" required />
+                <input type="email" name="email" placeholder="Email Address" required />
+              </div>
+              <div class="form-row">
+                <input type="tel" name="phone" placeholder="Phone Number" />
+                <input type="text" name="subject" placeholder="Subject" />
+              </div>
+              <textarea name="message" placeholder="How Can We Help You?" required></textarea>
+              <button type="submit" class="btn btn-dark">
+                Send Message
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+              <div class="form-status" id="contactFormStatus"></div>
+            </form>
+          </div>
+
+          <aside class="contact-side-card animate-on-scroll">
+            <h3>Other Ways to Connect</h3>
+
+            <div class="side-item">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <h4>Visit Our Center</h4>
+                <p>The House of Minds â€“ Psychology &amp; Wellness Centre<br />Gurugram, Haryana, India</p>
+              </div>
+            </div>
+
+            <div class="side-item">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              </div>
+              <div>
+                <h4>Email Us</h4>
+                <p>support@thehouseofminds.in</p>
+              </div>
+            </div>
+
+            <div class="side-item">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.79.66 2.65a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.43-1.43a2 2 0 0 1 2.11-.45c.86.32 1.75.54 2.65.66A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <h4>Call Us</h4>
+                <p>+91 98765 43210</p>
+              </div>
+            </div>
+
+            <div class="side-item">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              </div>
+              <div>
+                <h4>Follow Us</h4>
+                <div class="side-social">
+                  <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="18" cy="6" r="1"></circle></svg></a>
+                  <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 3h3V0h-3c-3 0-5 2-5 5v3H7v4h3v9h4v-9h3l1-4h-4V5c0-1 .5-2 2-2z" /></svg></a>
+                  <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle><path d="M10 9v12M10 14c0-3 2-5 5-5s5 2 5 5v7"></path></svg></a>
+                  <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z"/></svg></a>
+                </div>
+              </div>
+            </div>
+
+          </aside>
+        </div>
+      </section>
+
+      <!-- Locations -->
+      <section class="locations-section stack-section">
+        <div class="container">
+          <div class="locations-head animate-on-scroll">
+            <p class="eyebrow">
+              <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 5H1M1 5l5-4M1 5l5 4"/></svg>
+              Our Locations
+            </p>
+            <h2>Visit Us At Our Centers</h2>
+          </div>
+
+          <div class="locations-grid">
+            <div class="location-card animate-on-scroll">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3>Gurugram Center</h3>
+              <p>Professional counseling, psychotherapy, and wellness consultations in a safe and confidential environment.</p>
+              <p class="hours">Monday â€“ Saturday Â· 9:00 AM â€“ 7:00 PM</p>
+            </div>
+
+            <div class="location-card animate-on-scroll">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <h3>Delhi Center</h3>
+              <p>Specialized therapy, psychological assessments, and relationship counseling services for individuals and families.</p>
+              <p class="hours">Monday â€“ Saturday Â· 9:00 AM â€“ 7:00 PM</p>
+            </div>
+
+            <div class="location-card animate-on-scroll">
+              <div class="icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M12 18v2"/></svg>
+              </div>
+              <h3>Online Sessions</h3>
+              <p>Secure and convenient teletherapy sessions accessible from anywhere in India.</p>
+              <p class="hours">Flexible Scheduling Available</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section stack-section stack-end" id="faq">
+        <div class="section-bg"></div>
+        <div class="section-overlay"></div>
+        <div class="section-inner container faq-grid">
+          <div class="faq-copy-intro animate-on-scroll">
+            <p class="eyebrow">
+              <svg viewBox="0 0 24 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 5H1M1 5l5-4M1 5l5 4"/></svg>
+              FAQ
+            </p>
+            <h2>Frequently Asked Questions</h2>
+            <p class="faq-intro-desc">Find answers to common questions about our services, appointments, confidentiality, and therapy process.</p>
+            <a href="#faq" class="btn btn-primary">
+              View All FAQs
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+          <div class="faq-copy">
+
+
+            <div class="faq-list animate-on-scroll">
+              <div class="faq-item open">
+                <button class="faq-question">
+                  <span>How do I book a session?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer-wrapper">
+                  <div class="faq-answer-content">
+                    <p>You can schedule an appointment through our website, contact form, phone call, email, or WhatsApp. Our team will help you choose a suitable date and time.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Is everything discussed during therapy confidential?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer-wrapper">
+                  <div class="faq-answer-content">
+                    <p>Yes. Client confidentiality is one of our core values. All sessions and personal information are handled with the highest level of privacy and professional ethics.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you offer online counseling sessions?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer-wrapper">
+                  <div class="faq-answer-content">
+                    <p>Yes. We provide secure online counseling and teletherapy services, allowing clients to access professional support from the comfort of their homes.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>What concerns can you help with?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer-wrapper">
+                  <div class="faq-answer-content">
+                    <p>We provide support for stress, anxiety, depression, relationship challenges, academic pressure, workplace burnout, emotional well-being, personal growth, and more.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you provide services for children and adolescents?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer-wrapper">
+                  <div class="faq-answer-content">
+                    <p>Yes. We offer specialized child and adolescent counseling, behavioral assessments, emotional development support, and parent guidance programs.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <button class="faq-question">
+                  <span>Do you offer corporate wellness programs?</span>
+                  <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer-wrapper">
+                  <div class="faq-answer-content">
+                    <p>Yes. We partner with organizations to provide employee wellness programs, stress management workshops, mental health awareness initiatives, and resilience training.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- CTA Band (normal flow, after the pinned stack) -->
+    <section class="cta-band">
+      <div class="container cta-band-inner animate-on-scroll">
+          <div class="cta-band-left">
+            <div class="icon-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 22 L20 10 L32 22" transform="translate(-4 -4) scale(0.8)"/><path d="M20 30c0-3 2-5 4-5s4 2 4 5-2 6-4 8c-2-2-4-5-4-8z" transform="translate(-8 -8)"/></svg>
+            </div>
+            <div>
+              <h3>Your Mental Well-Being Matters</h3>
+              <p>Take the first step toward emotional wellness, resilience, and personal growth with professional support tailored to your needs.</p>
+            </div>
+          </div>
+        <a href="#contact-form" class="btn btn-primary">
+          Book a Session Today
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <footer id="contact" class="main-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="./index.html" class="footer-logo">
+            <img src="assets/home/logo-navbar.png" alt="The House of Minds" />
+          </a>
+          <p class="footer-tagline">A safe space to heal,<br />grow and thrive.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./index.html#resources">Resources</a></li>
+            <li><a href="./index.html#faq">FAQ</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Connect</h4>
+          <a href="mailto:hello@thehouseofminds.com">hello@thehouseofminds.com</a>
+          <a href="tel:+1234567890">+123 456 7890</a>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+                <circle cx="12" cy="12" r="4"></circle>
+                <circle cx="18" cy="6" r="1"></circle>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M15 3h3V0h-3c-3 0-5 2-5 5v3H7v4h3v9h4v-9h3l1-4h-4V5c0-1 .5-2 2-2z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+                <path d="M10 9v12M10 14c0-3 2-5 5-5s5 2 5 5v7"></path>
+              </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M23 3c-.8.4-1.7.7-2.6.8A4.5 4.5 0 0 0 22.3 1a9 9 0 0 1-2.9 1.1A4.5 4.5 0 0 0 11.8 6v1A12.8 12.8 0 0 1 2 2s-4 9 5 13a13 13 0 0 1-7 2c9 5 20 0 20-11.5v-.6A9 9 0 0 0 23 3z" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4>Stay Connected</h4>
+            <p>Join our community for wellness tips,<br />updates and inspiring content.</p>
+            <form class="newsletter-form" id="newsletterForm">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+            <div class="newsletter-feedback" id="newsletterFeedback"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-leaf">
+          <svg viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M10 10C20 5 40 5 50 10" />
+          </svg>
+        </div>
+        <p>© 2026 The House Of Minds. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
+
