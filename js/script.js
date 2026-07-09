@@ -3,23 +3,27 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 0. Contact page hero image source switcher
-  const contactHeroBg = document.querySelector('.contact-hero .section-bg[data-desktop-image][data-mobile-image]');
-  if (contactHeroBg) {
-    const desktopImage = contactHeroBg.getAttribute('data-desktop-image') || '';
-    const mobileImage = contactHeroBg.getAttribute('data-mobile-image') || desktopImage;
+  // 0. Contact page section image source switcher
+  const contactSectionImages = document.querySelectorAll(
+    '.contact-hero .section-bg[data-desktop-image][data-mobile-image], .contact-form-section .section-bg[data-desktop-image][data-mobile-image], .faq-section .section-bg[data-desktop-image][data-mobile-image]'
+  );
+  if (contactSectionImages.length) {
     const heroMediaQuery = window.matchMedia('(min-width: 1025px)');
 
-    const applyContactHeroImage = () => {
-      const imageUrl = heroMediaQuery.matches ? desktopImage : mobileImage;
-      contactHeroBg.style.backgroundImage = imageUrl ? `url("${imageUrl}")` : '';
+    const applyContactSectionImages = () => {
+      contactSectionImages.forEach((bg) => {
+        const desktopImage = bg.getAttribute('data-desktop-image') || '';
+        const mobileImage = bg.getAttribute('data-mobile-image') || desktopImage;
+        const imageUrl = heroMediaQuery.matches ? desktopImage : mobileImage;
+        bg.style.backgroundImage = imageUrl ? `url("${imageUrl}")` : '';
+      });
     };
 
-    applyContactHeroImage();
+    applyContactSectionImages();
     if (typeof heroMediaQuery.addEventListener === 'function') {
-      heroMediaQuery.addEventListener('change', applyContactHeroImage);
+      heroMediaQuery.addEventListener('change', applyContactSectionImages);
     } else if (typeof heroMediaQuery.addListener === 'function') {
-      heroMediaQuery.addListener(applyContactHeroImage);
+      heroMediaQuery.addListener(applyContactSectionImages);
     }
   }
 
