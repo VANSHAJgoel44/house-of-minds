@@ -218,7 +218,7 @@ svg { display: block; }
   .mobile-menu-toggle {
     display: flex;
     position: relative;
-    z-index: 7001;
+    z-index: 100000;
   }
   .header-cta { display: none; }
   .nav-menu {
@@ -237,6 +237,7 @@ svg { display: block; }
     justify-content: center;
     padding: 88px 24px 32px;
     pointer-events: none;
+    z-index: 99999;
   }
   .nav-menu.open {
     transform: translateX(0);

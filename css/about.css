@@ -372,6 +372,9 @@
 }
 
 @media (max-width: 900px) {
+  .offer-intro {
+    grid-template-columns: 1fr;
+  }
   .story {
     grid-template-columns: 1fr;
     text-align: center;
@@ -430,6 +433,7 @@
     border-right: none;
     border-bottom: 1px solid rgba(30,39,25,0.08);
     padding: 22px var(--gutter) 18px;
+    width: 100%;
   }
   .services-interactive {
     display: none;
@@ -453,6 +457,7 @@
   .offer-head {
     margin-bottom: 14px;
     text-align: center;
+    width: 100%;
   }
   .offer-head h2 {
     font-size: clamp(1.4rem, 5vw, 1.8rem);
@@ -460,10 +465,6 @@
   .offer-head p {
     margin-inline: auto;
     max-width: 38rem;
-  }
-  .services-carousel-head {
-    text-align: center;
-    flex-shrink: 0;
   }
   .services-carousel-head h2 {
     font-size: clamp(1.3rem, 5.5vw, 1.7rem);
