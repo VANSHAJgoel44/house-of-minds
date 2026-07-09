@@ -381,12 +381,19 @@
     padding: 0;
   }
 
+  .services-section {
+    height: auto;
+    max-height: none;
+    min-height: 0;
+    overflow: visible;
+  }
+
   .services-container,
   .together-content,
   .testimonials-container,
   .cta-container,
   .faq-container {
-    width: 100%;margin-top: 20%;
+    width: 100%;margin-top: 5%;margin-bottom: 5%;
   }
 
   .together-features,
@@ -454,6 +461,13 @@
     min-height: 100svh;
     height: 100svh;
     padding-block: 0;
+  }
+
+  .services-section {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
   }
 
   .hero-section {

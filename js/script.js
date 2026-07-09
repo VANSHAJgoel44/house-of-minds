@@ -3,6 +3,26 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Contact page hero image source switcher
+  const contactHeroBg = document.querySelector('.contact-hero .section-bg[data-desktop-image][data-mobile-image]');
+  if (contactHeroBg) {
+    const desktopImage = contactHeroBg.getAttribute('data-desktop-image') || '';
+    const mobileImage = contactHeroBg.getAttribute('data-mobile-image') || desktopImage;
+    const heroMediaQuery = window.matchMedia('(min-width: 1025px)');
+
+    const applyContactHeroImage = () => {
+      const imageUrl = heroMediaQuery.matches ? desktopImage : mobileImage;
+      contactHeroBg.style.backgroundImage = imageUrl ? `url("${imageUrl}")` : '';
+    };
+
+    applyContactHeroImage();
+    if (typeof heroMediaQuery.addEventListener === 'function') {
+      heroMediaQuery.addEventListener('change', applyContactHeroImage);
+    } else if (typeof heroMediaQuery.addListener === 'function') {
+      heroMediaQuery.addListener(applyContactHeroImage);
+    }
+  }
+
   // 1. Mobile Menu Toggle
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');

@@ -215,10 +215,27 @@ svg { display: block; }
 }
 
 @media (max-width: 900px) {
+  .main-header {
+    z-index: 2147483646;
+  }
   .mobile-menu-toggle {
     display: flex;
     position: relative;
     z-index: 100000;
+  }
+  body.menu-open .mobile-menu-toggle {
+    position: fixed;
+    top: max(20px, env(safe-area-inset-top));
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    border-radius: 999px;
+    background: rgba(30,39,25,0.92);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+    z-index: 2147483648;
+    pointer-events: auto;
   }
   .header-cta { display: none; }
   .nav-menu {
@@ -235,9 +252,9 @@ svg { display: block; }
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 88px 24px 32px;
+    padding: 84px 24px 32px;
     pointer-events: none;
-    z-index: 99999;
+    z-index: 2147483644;
   }
   .nav-menu.open {
     transform: translateX(0);

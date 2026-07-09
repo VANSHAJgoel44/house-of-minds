@@ -167,6 +167,7 @@ input, textarea { font-family: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 85vh;
 }
 
 /* ==========================================================================
